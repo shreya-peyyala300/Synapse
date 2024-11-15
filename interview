@@ -1,2 +1,13 @@
 1)what is synapse?
-2)
+2)Analytics Runtime ? sqlor spark we use ....storage used is ADLS
+3)how to create azure synapse?
+4)linked Service
+5)synapse sql
+6)Apache spark?types
+7)Pipelines
+8)Dataflow
+9)Trigger
+10)Integration dataset-named view of data that simple oints or refers to the data used in activity as input or output.
+11)serverless sql pool
+12)builtin-pre conf serverless sql pool
+13)in synapse can we write sql on unstructured data ? ans is yes
