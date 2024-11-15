@@ -11,3 +11,4 @@
 11)serverless sql pool
 12)builtin-pre conf serverless sql pool
 13)in synapse can we write sql on unstructured data ? ans is yes
+14) explain openrowset()?select * from openrowset(bulk=,Format=,Header_Row=, Parser_version=)
