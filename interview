@@ -11,4 +11,7 @@
 11)serverless sql pool
 12)builtin-pre conf serverless sql pool
 13)in synapse can we write sql on unstructured data ? ans is yes
-14) explain openrowset()?select * from openrowset(bulk=,Format=,Header_Row=, Parser_version=)
+14) explain openrowset()?select * from openrowset(bulk=,Format=,Header_Row=, Parser_version=) as [result] or
+->storage file->new sql script->select top 100--------------> result can be visualised
+15)Dedicated sql pool-> dedicated sql pool will be associated to dedicated sql db
+16)synapse spark execution plan
