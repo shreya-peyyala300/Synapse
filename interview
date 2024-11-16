@@ -15,3 +15,4 @@
 ->storage file->new sql script->select top 100--------------> result can be visualised
 15)Dedicated sql pool-> dedicated sql pool will be associated to dedicated sql db
 16)synapse spark execution plan
+17)How to integrate pipeline in Synapse
