@@ -148,7 +148,8 @@ create master key encrypted by password
 
 26)PolyBase in Azure Synapse is a technology that allows users to query and access data from external sources such as Azure Blob Storage, Hadoop, or other data stores using Transact-SQL (T-SQL)
 
-27)
+27)create external file format-->1)create external file format then create external table
+28)
 
 
 
