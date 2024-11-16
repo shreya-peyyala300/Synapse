@@ -16,3 +16,130 @@
 15)Dedicated sql pool-> dedicated sql pool will be associated to dedicated sql db
 16)synapse spark execution plan
 17)How to integrate pipeline in Synapse
+18)Monitor tab in synapse-->Apache spark app,sql pools, pipelines,logs(in management hub)
+
+
+19)Data Governance in synapse:
+Supports fine-grained access controls via Role-Based Access Control (RBAC) and Synapse RBAC roles
+Column-Level Security:
+Restrict access to sensitive columns within tables to specific users or roles.
+Row-Level Security (RLS):
+Apply filters to restrict user access to specific rows in a table based on their roles.
+Data Classification and Sensitivity Labels
+Integrates with Microsoft Purview to classify and label data.
+Sensitivity labels are applied to datasets for better visibility and control over sensitive information.
+Enables tracking of sensitive data access and usage.
+
+Data Lineage and Impact Analysis
+Through Microsoft Purview, you can:
+Track the lineage of data as it flows through pipelines, databases, and transformations.
+Understand the impact of changes to data pipelines or schemas.
+
+Dynamic Data Masking:
+Automatically masks sensitive data in query results for unauthorized users.
+
+Encryption:
+Data at rest is encrypted using Transparent Data Encryption (TDE).
+Data in transit is encrypted via TLS.
+
+Compliance:
+Synapse adheres to industry standards and certifications like GDPR,
+
+Audit and Monitoring
+Synapse Analytics Audit Logs:
+Monitor data access, query executions, and pipeline activities for compliance and troubleshooting.
+Azure Monitor and Log Analytics:
+Gain insights into system performance, usage patterns, and anomalies.
+Data Sharing and Access
+Azure Synapse Data Sharing:
+Share data securely within and across organizations using Azure Data Share.
+
+
+20)fl
+1. Distributed and Resilient Architecture
+Azure Synapse is built on a distributed architecture where:
+Data is split into distributed partitions across multiple nodes.
+Queries and workloads are executed in parallel on these distributed nodes.
+This design ensures that even if one node fails, the system can redistribute the workload to healthy nodes.
+2. Automatic Data Replication
+Synapse ensures fault tolerance with multiple replicas of data stored in Azure Storage.
+Primary Replica: Actively used for queries and processing.
+Secondary Replica: Maintained for redundancy and disaster recovery.
+Replicas are stored in geo-redundant storage to protect against regional failures.
+The data replication process ensures that there is no single point of failure.
+3. Query Execution Fault Tolerance
+Queries in Synapse are broken into smaller tasks and distributed across nodes.
+If a node fails during query execution:
+The affected task is automatically retried on a healthy node.
+This minimizes the impact of transient or hardware-related failures on query completion.
+4. High Availability
+Synapse is designed to provide 99.9% SLA uptime.
+Features like hot standby nodes and load balancing ensure that system failures do not result in downtime.
+
+5. Data Recovery Mechanisms
+Point-in-Time Restore:
+Synapse allows you to restore data warehouses to a previous state using automated snapshots.
+Snapshots are taken periodically and can be used to recover data lost due to accidental deletion or corruption.
+Backup and Restore:
+Automated backups are taken at regular intervals and stored in durable Azure Blob Storage.
+You can manually trigger backups for additional protection.
+
+8. Fault-Tolerant Pipelines
+Synapse Pipelines (powered by Azure Data Factory) include:
+Retry Policies: Automatically retries failed activities with customizable retry counts and intervals.
+Checkpointing: Saves progress during data movement or transformation tasks to resume from the last checkpoint in case of failure.
+9. Monitoring and Alerts
+Azure Monitor and Log Analytics:
+Provide real-time monitoring and alerts for performance and system health.
+Alerts help detect and resolve potential issues before they escalate into failures.
+Query Performance Insights:
+Identifies long-running or failed queries, allowing quick diagnosis and optimization.
+
+How Fault Tolerance Operates in Common Scenarios
+Scenario 1: Node Failure
+A Synapse compute node fails during a query execution.
+The system:
+Automatically redistributes the tasks to other available nodes.
+Ensures minimal query disruption through task retries.
+Scenario 2: Data Corruption
+A block of data becomes corrupted in storage.
+Synapse:
+Automatically detects and repairs the corrupted block using redundant copies from other replicas.
+Scenario 3: Regional Outage
+An entire Azure region becomes unavailable.
+Synapse:
+Switches to a geo-redundant copy of the data in a different region.
+Ensures that workloads continue with minimal downtime.
+Best Practices for Enhancing Fault Tolerance in Synapse
+Enable Geo-Redundant Storage:
+
+For critical data, enable GZRS (Geo-Zone Redundant Storage) to replicate data across regions.
+Set Up Alerts:
+
+Use Azure Monitor to set up alerts for failures, high resource usage, or slow queries.
+Use Retry Policies:
+
+Configure retry policies in Synapse Pipelines to handle transient failures gracefully.
+Backup Regularly:
+
+Schedule regular manual backups in addition to automated snapshots.
+Optimize Queries:
+
+Break large queries into smaller, manageable tasks to reduce the impact of failures.
+Leverage Azure Synapse Link:
+
+For hybrid fault-tolerant scenarios, integrate Synapse with Azure Cosmos DB or other transactional systems.
+
+21)Add Admin to your account
+rbac
+synapse rbac
+primary storage owner(iam add role)
+dedicated sql pool-db_owner role-(sql query)
+
+22)Architecture SQL
+
+
+
+
+
+
