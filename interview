@@ -142,6 +142,13 @@ Node based architecture -
 23)types of data distribution
 
 24)what things serverless pool doesnot support 
+25)External data source-connection strings+credential----
+create database scoped credential--------------with identity =  secret=
+create master key encrypted by password
+
+26)PolyBase in Azure Synapse is a technology that allows users to query and access data from external sources such as Azure Blob Storage, Hadoop, or other data stores using Transact-SQL (T-SQL)
+
+27)
 
 
 
