@@ -137,6 +137,7 @@ primary storage owner(iam add role)
 dedicated sql pool-db_owner role-(sql query)
 
 22)Architecture SQL
+Node based architecture -
 
 
 
